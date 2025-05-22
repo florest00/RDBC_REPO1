@@ -8,6 +8,44 @@ public class JelliesController {
 	private Scanner sc = new Scanner(System.in);
 	private JelliesService jelliesService = new JelliesService();
 	
+	public void menu() throws Exception {
+		int num = -1;
+		while(num != 0) {
+			printMenu();
+			num = ScanNumber();
+			callFunction(num);
+		}
+	}
+	
+	public void printMenu() {
+		System.out.println("---- MENU ----");
+		System.out.println("0. 프로그램 종료");
+		System.out.println("1. 상품 등록");
+		System.out.println("2. 상품 목록 조회");
+		System.out.println("3. 상품 상세 조회");
+		System.out.println("4. 상품 수정");
+		System.out.println("5. 상품 삭제");
+	}
+	
+	
+	public int ScanNumber() {
+		System.out.println("메뉴 번호");
+		int num = Integer.parseInt(sc.nextLine());
+		return num;
+	}
+	
+	public void callFunction(int num) throws Exception {
+		switch (num) {
+		case 0 : System.out.println("프로그램 종료"); break;
+		case 1 : insert(); break;
+		case 2 : update(); break;
+		case 3 : delete(); break;
+		case 4 : selectList(); break;
+		case 5 : selectOne(); break;
+		default: System.out.println("잘못 입력하셨습니다.");
+		}
+	}
+	
 	//insert
 	public void insert() throws Exception {
 		//데이터 준비

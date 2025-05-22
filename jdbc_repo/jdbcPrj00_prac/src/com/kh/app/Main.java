@@ -6,14 +6,13 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		System.out.println("==== BOOK ====");
-		
 		BookController bookController = new BookController();
 		bookController.insert();
 //		bookController.update();
 //		bookController.delete();
-//		bookController.selectOne();
 //		bookController.selectList();
+//		bookController.selectOne();
+		
 	}
 
 }
